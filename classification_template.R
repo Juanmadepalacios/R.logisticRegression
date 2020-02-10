@@ -1,4 +1,4 @@
-# Regresión logística
+#Plantilla de Clasificación
 
 #Importar el dataset
 dataset = read.csv('Social_Network_Ads.csv')
@@ -17,10 +17,8 @@ testing_set = subset(dataset, split == FALSE)
 training_set[,1:2] = scale(training_set[,1:2])
 testing_set[,1:2] = scale(testing_set[,1:2])
 
-#Ajustar el modelo de regresión logística con el conjunto de entrenamiento.
-classifier = glm(formula =  Purchased ~ .,
-                 data = training_set, 
-                 family = binomial)
+#Ajustar el clasificador con el conjunto de entrenamiento.
+# Crear el modelo de clasificación
 
 #Predicción de los resultados con el conjunto de testing
 prob_pred = predict(classifier, type = "response",
